@@ -13,14 +13,24 @@ namespace ProjetoIngresso
         {
             try
             {
-                int codigoTela = int.Parse(Console.ReadLine());
-                if (TelaExiste(codigoTela))
+                bool ativaMenu = true;
+                int codigoTela = new int();
+
+                while (ativaMenu)
                 {
-                    RedirecionarTela(codigoTela);
-                }
-                else
-                {
-                    Console.WriteLine("Tela não encontrada");
+                    Console.Write("=> ");
+                    codigoTela = int.Parse(Console.ReadLine());
+                    if (TelaExiste(codigoTela))
+                    {
+                        ativaMenu = false;
+                        RedirecionarTela(codigoTela);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tela não encontrada");
+                        Console.Write("=> ");
+                    }               
+
                 }
             }
             catch (Exception e)

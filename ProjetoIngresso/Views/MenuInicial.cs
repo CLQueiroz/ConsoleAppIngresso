@@ -10,8 +10,7 @@ namespace ProjetoIngresso.Views
         public static void Render()
         {
             Cabecalho.Render("Projeto Ingressos");
-            GerarMenu gerarMenu = new GerarMenu();
-            gerarMenu.Render();
+            GerarMenu.Render();
         }        
     }
 }
